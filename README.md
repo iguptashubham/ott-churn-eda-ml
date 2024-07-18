@@ -2,7 +2,9 @@
 
 For this analysis, we'll be examining customer churn data from a leading subscription-based streaming service. This industry giant boasts a vast library of movies, TV shows, and original content. Understanding why customers discontinue their subscriptions will be crucial in optimizing the user experience, reducing churn, and maximizing customer lifetime value.
 
-# Pipeline
+# flowchart of Project
+![STREAMING OTT PROJECT FLOWCHART (2)](https://github.com/user-attachments/assets/e7e8b1e2-aa06-4965-936c-2c4c078ab0c2)
+
 
 # Exploration
 
