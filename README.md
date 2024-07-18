@@ -251,18 +251,9 @@ For this analysis, we'll be examining customer churn data from a leading subscri
    - Churn rate decreases to ~7% as account age increases.
 
 ### Total Monthly Charges
-
-
-```python
-uni_plot(df,'MonthlyCharges', h_bins=30,h_hue='Churn')
-```
-
-
     
-![png](output_36_0.png)
+![output_36_0](https://github.com/user-attachments/assets/c3ddc056-14cb-4a9b-a5af-f3d6939851da)
     
-
-
 1. **Churn and Monthly Charges:**
    - Churn rates tend to increase as monthly charges increase. Users with higher monthly charges are more likely to churn.
    - Low churn occurs when monthly charges are low.
@@ -275,17 +266,7 @@ uni_plot(df,'MonthlyCharges', h_bins=30,h_hue='Churn')
    - Maximum monthly price: 19.99
 
 ### Viewing Hours Per Week
-
-
-```python
-uni_plot(df,'ViewingHoursPerWeek', h_bins=30, h_hue='Churn')
-```
-
-
-    
-![png](output_39_0.png)
-    
-
+![output_39_0](https://github.com/user-attachments/assets/905ca61b-4d03-4554-9b57-a6a978832343)
 
 1. **Churn and Viewing Hours:**
    - Users with higher weekly viewing hours are less likely to churn compared to those with lower viewing hours.
@@ -299,15 +280,7 @@ uni_plot(df,'ViewingHoursPerWeek', h_bins=30, h_hue='Churn')
 
 ### Average Viewing Duration
 
-
-```python
-uni_plot(df, 'AverageViewingDuration', h_bins=30, h_hue='Churn')
-```
-
-
-    
-![png](output_42_0.png)
-    
+![output_42_0](https://github.com/user-attachments/assets/a71cc22b-c2b9-493f-a4b8-ad1ee92c2708)
 
 
 1. **Churn and Average View Duration:**
@@ -324,18 +297,8 @@ uni_plot(df, 'AverageViewingDuration', h_bins=30, h_hue='Churn')
    - Average is 92.37.
 
 ### Content Downloads Per Month
-
-
-```python
-uni_plot(df, 'ContentDownloadsPerMonth', h_hue='Churn', h_bins=30)
-```
-
-
+![output_45_0](https://github.com/user-attachments/assets/42256c7a-f96b-4d14-a69f-3952a7a0a063)
     
-![png](output_45_0.png)
-    
-
-
 1. **Churn and Content Downloads Per Month:**
    - Users with high Content Downloads Per Month are more likely to churn compared to users with low Content Downloads Per Month.
    - The sudden drop of up to 50% in some bars indicates that people download new series and shows when they are released.
@@ -351,18 +314,8 @@ uni_plot(df, 'ContentDownloadsPerMonth', h_hue='Churn', h_bins=30)
    - The average view duration across users is 24.48.
 
 ### User Rating
-
-
-```python
-uni_plot(df, 'UserRating', h_bins=30, h_hue='Churn')
-```
-
-
+![output_48_0](https://github.com/user-attachments/assets/ac6b8ab4-a7dc-4875-8c5c-e487b7c6cb46)
     
-![png](output_48_0.png)
-    
-
-
 1. **Churn and User Rating:**
    
    - There is no relationship between rating and churn because rating 1 to 5 there is relatively stable churn.
@@ -376,15 +329,7 @@ uni_plot(df, 'UserRating', h_bins=30, h_hue='Churn')
 
 ### Support Ticket Per month
 
-
-```python
-uni_plot(df,'SupportTicketsPerMonth', h_bins=15,h_hue='Churn')
-```
-
-
-    
-![png](output_51_0.png)
-    
+![output_51_0](https://github.com/user-attachments/assets/dc6fe519-10ac-4bc1-a3ba-e14e789195d6)
 
 
 1. **Churn and Support Ticket:**
@@ -401,16 +346,8 @@ uni_plot(df,'SupportTicketsPerMonth', h_bins=15,h_hue='Churn')
 
 ### Watch List Size
 
-
-```python
-uni_plot(df,'WatchlistSize',h_bins=25, h_hue='Churn')
-```
-
-
+![output_54_0](https://github.com/user-attachments/assets/84b0ea28-2bcd-4eb1-a0b2-927070855ddb)
     
-![png](output_54_0.png)
-    
-
 
 1. **Churn and Watch List Size:**
    
@@ -423,31 +360,8 @@ uni_plot(df,'WatchlistSize',h_bins=25, h_hue='Churn')
    - Average is 12.02.
 
 ### Churn by Subscription
-
-
-```python
-subs_ = df.groupby(['SubscriptionType','Churn'], as_index=False).size()
-subs1 = subs_[subs_['Churn']==0]
-subs2 = subs_[subs_['Churn']==1]
-plt.figure(figsize = (9,5))
-ax = sns.barplot(data = subs1, x = 'SubscriptionType', y = 'size',errorbar=None, label = 'Not Churned', edgecolor = 'black')
-ax1 = sns.barplot(data = subs2, x = 'SubscriptionType', y = 'size',errorbar=None,ax = ax, label = 'Churned',edgecolor = 'black')
-ax1.axhline(subs2['size'].mean(), color = 'black', linestyle = '--', alpha = 0.5)
-ax1.plot(0.478,18000,marker='^')
-ax1.text(0.460,21000,'Average Churn', rotation = 'vertical', mouseover = True)
-for i in ax1.containers:
-    ax1.bar_label(i, label_type = 'center', color = 'white')
-plt.title('Churn by Subcription')
-plt.legend(loc='upper left', bbox_to_anchor=(1.0, 1.0), frameon=False)
-plt.grid(True)
-plt.show()
-```
-
-
     
-![png](output_57_0.png)
-    
-
+![output_57_0](https://github.com/user-attachments/assets/ff88e71c-2d23-427b-b646-a29c5a88c3db)
 
 1. **Churn Rate by Subscription Type**:
    - The churn rate is highest among Basic subscribers, followed by Standard and Premium.
@@ -463,31 +377,7 @@ plt.show()
 
 ### Payment Method and Paperless Billing
 
-
-```python
-billing = df.groupby(['PaymentMethod','PaperlessBilling','Churn'], as_index=False).size()
-billing = billing.pivot_table(index = 'PaymentMethod', columns = ['PaperlessBilling','Churn'], values='size')
-```
-
-
-```python
-ax = billing.plot(kind='barh', stacked=True, figsize=(10, 5), width = 0.7, edgecolor = 'black')
-ax.legend(loc='upper left', bbox_to_anchor=(1.0, 1.0), frameon=False)
-for c in ax.containers:
-    ax.bar_label(c, label_type='center', color = 'white')
-plt.title('Churn By Payment Method and Paperless Billing')
-plt.xlabel('')
-plt.xticks([])
-plt.grid(True)
-plt.tight_layout()
-plt.show()
-```
-
-
-    
-![png](output_61_0.png)
-    
-
+![output_61_0](https://github.com/user-attachments/assets/34be1c57-cf87-4ee1-8c0a-ce72031aa49a)
 
 1. **Churn and Payment Method:**
    
@@ -498,16 +388,7 @@ plt.show()
     - users with Payment method which takes time and effort have thr highest churn rate as compared to the payment method that require less effort.
 
 
-```python
-plt.figure(figsize = (10,8))
-sns.heatmap(billing.corr(), annot = True, linecolor='white', linewidths=3,cbar_kws={'orientation': 'horizontal'}, cmap="crest")
-plt.title('Correlation between Paperless billing and Churn')
-plt.show()
-```
-
-
-    
-![png](output_63_0.png)
+![output_63_0](https://github.com/user-attachments/assets/1822a2d7-a021-4950-93a8-ccdb009cf2a3)
     
 
 
@@ -524,23 +405,8 @@ plt.show()
 
 ### Content Type with Churn
 
-
-```python
-content = df.groupby(['ContentType','Churn']).size().unstack()
-ax = content.plot(kind = 'barh',stacked = True, width=0.65, figsize = (12,5),edgecolor = 'black')
-for i in ax.containers:
-    ax.bar_label(i, label_type = 'center', fontsize = 12, color = 'white')
-ax.set_title('Churn by Content Type')
-ax.legend(loc='upper left', bbox_to_anchor=(1.0, 1.0), frameon=False)
-plt.show()
-```
-
-
+![output_66_0](https://github.com/user-attachments/assets/b2337d64-da14-4e29-9bcd-84ac658fe561)
     
-![png](output_66_0.png)
-    
-
-
 - **Churn and Content type**:
     - Movie content have the lowest churn rate followed by Tv shows and both.
     - User who have subscribe both have the high churn rate.
@@ -548,24 +414,8 @@ plt.show()
 ### Churn by Genre
 
 
-```python
-genre = df.groupby(['GenrePreference','Churn']
-                  ).size().unstack().sort_values(by = 1.0, ascending = True)
-#plot
-ax = genre.plot(kind = 'barh', stacked = True, width = 0.85, figsize = (10,5),edgecolor = 'black')
-for i in ax.containers:
-    ax.bar_label(i, label_type = 'center', fontsize = 13, color = 'white')
-plt.title('Churn by Genre')
-ax.legend(loc='upper left', bbox_to_anchor=(1.0, 1.0), frameon=False)
-plt.xticks([])
-plt.show()
-```
-
-
+![output_69_0](https://github.com/user-attachments/assets/c1556cc5-d7e4-47bb-9d36-acb4950b99e9)
     
-![png](output_69_0.png)
-    
-
 
 - **Churn and Genre**:
     - Comedy have the high churn rate followed by the SCI-Fi, drama, fantasy and action have the lowest churn rate
@@ -574,53 +424,15 @@ plt.show()
 ### Churn by Parental Control and Subtitle Enables
 
 
-```python
-parent = df.groupby(['ParentalControl','Churn']).size().unstack()
-subtitle = df.groupby(['SubtitlesEnabled','Churn']).size().unstack()
-
-#plot
-fig, ax = plt.subplots(1,2,figsize = (18,6))
-#plot 1
-parent.plot(kind = 'barh', stacked = True, edgecolor = 'black', ax = ax[0])
-ax[0].set_title('Churn by Parent Control')
-for i in ax[0].containers:
-    ax[0].bar_label(i, label_type = 'center', color = 'white', fontsize = 13)
-#plot2
-subtitle.plot(kind = 'barh', stacked = True, edgecolor = 'black', ax = ax[1])
-ax[1].set_title('Churn by Subtitle')
-for i in ax[1].containers:
-    ax[1].bar_label(i, label_type = 'center', color = 'white', fontsize = 13)
-plt.show()
-```
-
-
+![output_72_0](https://github.com/user-attachments/assets/49a1c974-2fee-4b66-a513-a294bd518973)
     
-![png](output_72_0.png)
-    
-
 
 - High churn rate in No parental control and no subtitle enabled.
 - There is high number of users which have parent control and subtitle enabled. 
 
 ### Correlation with Churn
 
-
-```python
-corr_ = df[['AccountAge', 'ViewingHoursPerWeek',
-       'AverageViewingDuration', 'ContentDownloadsPerMonth', 'UserRating',
-       'SupportTicketsPerMonth', 'WatchlistSize', 'Churn']].corr()
-plt.figure(figsize = (18,8))
-sns.heatmap(corr_, annot = True, cmap = 'RdBu', cbar = True, linecolor='black', linewidths=1.1)
-plt.title('\n Coorelation \n', fontsize = 17)
-#plt.tight_layout()
-plt.show()
-```
-
-
-    
-![png](output_75_0.png)
-    
-
+![output_75_0](https://github.com/user-attachments/assets/c07f9147-170b-4a3b-8975-af7e28879a9f)
 
 1. Churn has a **negative correlation** with the following features:
    - `AccountAge`
