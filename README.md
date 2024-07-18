@@ -2,6 +2,8 @@
 
 For this analysis, we'll be examining customer churn data from a leading subscription-based streaming service. This industry giant boasts a vast library of movies, TV shows, and original content. Understanding why customers discontinue their subscriptions will be crucial in optimizing the user experience, reducing churn, and maximizing customer lifetime value.
 
+# Pipeline
+
 # Exploration
 
 ## Statistics
@@ -480,3 +482,6 @@ For this analysis, we'll be examining customer churn data from a leading subscri
      - Supportticketpermonth, userrating, and watchlistsize are associated with higher churn rates.
    - **Insight**: These correlations can guide targeted strategies to reduce churn (e.g., improving customer support or enhancing content recommendations).
 
+# Pipeline of Churn Predicting Machine learning Model
+
+![Screenshot 2024-07-18 212935](https://github.com/user-attachments/assets/43022410-4cef-407c-ad23-37a3ed3293a7)
